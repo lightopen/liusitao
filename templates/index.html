@@ -1,10 +1,25 @@
 <html>
 <head>
     <title>A Gift</title>
+    <script type="text/javascript">
+function timedText()
+{
+var t1=setTimeout("document.getElementById('txt').value='five'",1000)
+var t2=setTimeout("document.getElementById('txt').value='four'",2000)
+var t3=setTimeout("document.getElementById('txt').value='three'",3000)
+var t4=setTimeout("document.getElementById('txt').value='two'",4000)
+var t5=setTimeout("document.getElementById('txt').value='one'",5000)
+var t6=setTimeout("document.getElementById('form').style.display='none'",6000)
+var t7=setTimeout("document.getElementById('table').style.display='table'",6000)
+}
+</script>
 </head>
 
 <body>
-<table style="margin:auto">
+<form id='form' style='width:30%; margin:auto;'>
+<input type="button" value="CLICK ME" onClick="timedText()"><input type="text" id="txt">
+</form>
+<table style="margin:auto; display:none" id='table'>
 {% for l in d.values() %}
 <tr>
     {% for url in l %}
