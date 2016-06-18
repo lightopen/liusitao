@@ -7,10 +7,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    try:
-        img.main()
-    except:
-        pass
     f = open('img_urls.txt', 'r')
     urls = f.readlines()
     f.close()
