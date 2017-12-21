@@ -10,9 +10,16 @@
 {% for l in d.values() %}
 <tr>
     {% for url in l %}
-    <td><img src='{{url}}' /></td>
+        {% if url == last %}
+
+                <td><a href="{{url_for('.u')}}"><img src='{{url}}'  height="100" width="60" /></a></td>
+
+        {% else %}
+            <td><img src='{{url}}'  height="100" width="60" /></td>
+        {% endif %}
     {% endfor %}
 </tr>
 {% endfor %}
+</table>
 </body>
 </html>
