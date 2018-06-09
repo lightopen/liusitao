@@ -40,10 +40,11 @@ def update():
         app.config['UPDATING'] = False
 
 
-def spider(index_url = "https://movie.douban.com/people/49583935/collect"):
+def spider(index_url = "/people/49583935/collect"):
     urls = []
     next_url = index_url
     while next_url:
+        next_url = "https://movie.douban.com" + next_url
         resp = requests.get(next_url)
         html = lxml.etree.HTML(resp.text)
         items = html.xpath('//div[@class="item"]')
